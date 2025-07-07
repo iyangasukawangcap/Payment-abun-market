@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💰 Payment Abun Market 🚀</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #00ffc8;
+      font-size: 2.5em;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .payment-buttons, .social-buttons {
+      margin: 30px 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    button {
+      background: #1a1a1a;
+      color: #fff;
+      border: 2px solid #00ffcc;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00ffcc;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .info-box {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px dashed #00ffcc;
+      display: none;
+      font-size: 20px;
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .emoji {
+      font-size: 40px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emoji">🚀✨💸</div>
+  <h1>Welcome to Payment Abun Market 💰</h1>
+
+  <div class="payment-buttons">
+    <button onclick="showInfo('gopay')">🟦 Bayar via GoPay</button>
+    <button onclick="showInfo('dana')">🟪 Bayar via Dana</button>
+  </div>
+
+  <div id="gopay-info" class="info-box">
+    💳 <strong>GoPay:</strong><br>
+    📱 08812241621<br>
+    🧑‍💼 a.n. Ai Yuyun Yuliani
+  </div>
+
+  <div id="dana-info" class="info-box">
+    💳 <strong>Dana:</strong><br>
+    📱 082120029594<br>
+    🧑‍💼 a.n. Kristian Tauhid
+  </div>
+
+  <div class="social-buttons">
+    <button onclick="goTo('https://wa.me/6283867934714')">📱 Chat WhatsApp</button>
+    <button onclick="goTo('https://instagram.com/boboykuasatigaa')">📸 Buka Instagram</button>
+  </div>
+
+  <!-- Sound Effect -->
+  <audio id="clickSound">
+    <source src="https://www.soundjay.com/buttons/sounds/button-09.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playClickSound() {
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+    function showInfo(type) {
+      playClickSound();
+      document.getElementById('gopay-info').style.display = 'none';
+      document.getElementById('dana-info').style.display = 'none';
+
+      if (type === 'gopay') {
+        document.getElementById('gopay-info').style.display = 'block';
+      } else if (type === 'dana') {
+        document.getElementById('dana-info').style.display = 'block';
+      }
+    }
+
+    function goTo(url) {
+      playClickSound();
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300); // small delay so sound can play
+    }
+  </script>
+
+</body>
+</html>
